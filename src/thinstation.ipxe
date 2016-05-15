@@ -5,10 +5,11 @@
 # For now there is only one menu entry
 #http://iweb.dl.sourceforge.net/project/thinstation/LiveCD/TS-Multiclient-Desktop-LiveCD-Demo.iso
 
-set tmirror iweb.dl.sourceforge.net
+set tmirror boot.jphein.net
+#set tmirror iweb.dl.sourceforge.net
 
 :thinstation_menu
-set dir project/thinstation/LiveCD
+set dir thinstation
 menu TinyCoreLinux
 item --key c TS-Multiclient-Desktop-LiveCD-Demo TS-Multiclient-Desktop-LiveCD-Demo ( 271 MB)
 choose version || goto thinstation_exit
