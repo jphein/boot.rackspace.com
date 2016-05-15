@@ -21,7 +21,7 @@ echo Attempting chainload of boot.rackspace.com...
 goto menu || goto failsafe
 
 :menu
-chain http://boot.jphein.net/boot.rackspace.com/menu.ipxe
+chain http://boot.jphein.net/boot.rackspace.com/ipxe/menu.ipxe
 goto boot
 
 :failsafe
