@@ -16,6 +16,7 @@ item scientific ${space} Scientific
 item ubuntu ${space} Ubuntu
 item tinycore ${space} TinyCoreLinux
 item boxenbaby ${space} boXenbaby
+item thinstation ${space} Thinstation
 # Options
 item --gap Options:
 iseq ${arch} x86_64 && set bits 64 || set bits 32
@@ -60,4 +61,8 @@ goto linux_menu
 
 :boxenbaby
 chain boxenbaby.ipxe
+goto linux_menu
+
+:thinstation
+chain thinstation.ipxe
 goto linux_menu
