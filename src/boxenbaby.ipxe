@@ -16,7 +16,7 @@ echo ${cls}
 
 #kernel ${memdisk} iso raw ${params}
 kernel http://${tmirror}/${dir}/vmlinuz64 ${params}
-initrd http://${tmirror}/${dir}/${version}.gz cde
+initrd http://${tmirror}/${dir}/${version}.gz
 boot
 
 :boxenbaby_exit
