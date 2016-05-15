@@ -9,6 +9,7 @@ set tmirror boot.jphein.net
 #set tmirror iweb.dl.sourceforge.net
 
 :thinstation_menu
+#set dir project/thinstation/LiveCD
 set dir thinstation
 menu TinyCoreLinux
 item --key c TS-Multiclient-Desktop-LiveCD-Demo TS-Multiclient-Desktop-LiveCD-Demo ( 271 MB)
