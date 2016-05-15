@@ -1,0 +1,23 @@
+#!ipxe
+
+# Thinstation
+# http://thinstation.github.io/thinstation/
+# https://sourceforge.net/projects/thinstation/files/LiveCD/TS-Multiclient-Desktop-LiveCD-Demo.iso
+
+set tmirror sourceforge.net/projects/thinstation
+
+:thinstation_menu
+set dir files/LiveCD
+menu Thinstation
+item --key c TS-Multiclient-Desktop-LiveCD-Demo TS-Multiclient-Desktop-LiveCD-Demo (271 MB)
+choose version || goto thinstation_exit
+
+echo ${cls}
+
+kernel ${memdisk} iso raw ${params}
+initrd https://${tmirror}/${dir}/${version}-current.iso
+boot
+
+:thinstation_exit
+clear menu
+chain linux.ipxe
