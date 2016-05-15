@@ -1,5 +1,7 @@
 #!ipxe
 
+#1MB iso created here: https://rom-o-matic.eu/ using defaults and the below script
+
 :start
 set boot_rackspace_version 1
 echo boot.rackspace.com iPXE loader version 1
