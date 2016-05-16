@@ -13,6 +13,7 @@ set tmirror boot.jphein.net
 set dir thinstation
 menu TinyCoreLinux
 item --key c TS-Multiclient-Desktop-LiveCD-Demo TS-Multiclient-Desktop-LiveCD-Demo ( 271 MB)
+item --key c thinstation/build/boot-images/iso/thinstation  boxenbaby ( 148 MB)
 choose version || goto thinstation_exit
 
 echo ${cls}
