@@ -14,6 +14,7 @@ item gentoo ${space} Gentoo
 item opensuse ${space} openSUSE
 item scientific ${space} Scientific
 item ubuntu ${space} Ubuntu
+item lubuntu ${space} lubuntu
 item tinycore ${space} TinyCoreLinux
 item boxenbaby ${space} boXenbaby
 item thinstation ${space} Thinstation
@@ -65,4 +66,8 @@ goto linux_menu
 
 :thinstation
 chain thinstation.ipxe
+goto linux_menu
+
+:lubuntu
+chain lubuntu.ipxe
 goto linux_menu
