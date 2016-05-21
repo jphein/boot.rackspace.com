@@ -25,6 +25,8 @@ iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 menu ${boot_domain} [Local IP: ${netX/ip}]
 
 item --gap Default:
+item nqa ${space} boXenLinux. SSH into ${netX/ip}. SSH u&p: ubuntu
+item ltsp ${space} chainload LTSP
 item local ${space} Boot from local hdd
 
 item --gap Operating Systems:
@@ -52,6 +54,21 @@ goto main_menu
 :local
 echo Booting from local disks ...
 exit 0
+initrd.gz  ldlinux.c32  linux
+:nqa
+echo Loading unattended install
+kernel http://boot.jphein.net/ubuntu-installer/amd64/linux initrd=http://boot.jphein.net/ubuntu-installer/amd64/initrd.img vga=normal priority=critical locale=en_US url=http://boot.jphein.net/preseed/ubuntu-nqa.seed
+initrd http://boot.jphein.net/ubuntu-installer/amd64/initrd.gz
+boot
+
+:ltsp
+echo Loading LTSP PXE
+#chain http://boot.jphein.net/ltsp/vdi/pxelinux.0
+kernel http://boot.jphein.net/ltsp/vdi/vmlinuz initrd=http://boot.jphein.net/ltsp/vdi/initrd.img init=/sbin/init-ltsp forcepae root=/dev/nbd0
+initrd http://boot.jphein.net/ltsp/vdi/initrd.img
+boot
+#ipappend 2
+
 
 :reload
 echo Reloading menu.ipxe ...
